@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'moon_getheavy';
+  src: url('../../assets/fonts/Moon Get/moon_get-heavy-webfont.woff2') format('woff2'),
+       url('../../assets/fonts/Moon Get/moon_get-heavy-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+body {
+  background-color: black;
+  color: rgb(0, 105, 0);
+  color: lightseagreen;
+  font-family: 'Orbitron';
+}
