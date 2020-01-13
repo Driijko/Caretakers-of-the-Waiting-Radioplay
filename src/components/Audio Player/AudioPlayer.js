@@ -39,7 +39,7 @@ export default function AudioPlayer(props) {
   const [currentTrack, setCurrentTrack] = useState(props.currentTrack);
 
   // PLAYBACK
-  const [audioIsPlaying, setAudioIsPlaying] = useState(false);
+  const [audioIsPlaying, setAudioIsPlaying] = useState(true);
   const [currentTime, setCurrentTime] = useState(0);
   let audioWasPlaying = false;
 
@@ -57,6 +57,7 @@ export default function AudioPlayer(props) {
       src={audioPath(currentTrack.filePath)}
       type="audio/mpeg"
       onTimeUpdate={handleTimeUpdate}
+      autoPlay={true}
     >
       Your browser does not support the audio software used on this website. If you are using Internet Explorer, please 
       update it to the most recent version, or revisit this website using a browser like Firefox or Chrome.
@@ -84,9 +85,11 @@ export default function AudioPlayer(props) {
     if(event.target.id === "playPauseButton") {
       if(audioIsPlaying) {
         setAudioIsPlaying(false);
+        audioElementRef.current.pause();
       }
       else {
         setAudioIsPlaying(true);
+        audioElementRef.current.play();
       }     
     }
     if(event.target.id === "muteFullVolumeButton") {
@@ -137,10 +140,11 @@ export default function AudioPlayer(props) {
   useEffect(
     () => {
       setCurrentTrack(props.currentTrack)
-      setAudioIsPlaying(false)
+      setAudioIsPlaying(true)
     },
     [props.currentTrack]
   )
+
 
   // PLAY / PAUSE AUDIO
   useEffect(
@@ -161,6 +165,7 @@ export default function AudioPlayer(props) {
     () => {
       if (props.introAudioPlays) {
         setAudioIsPlaying(true)
+        audioElementRef.current.play();
       }
     },
     [props.introAudioPlays]

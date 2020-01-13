@@ -49,6 +49,9 @@ export default function MainPage(props) {
   // If it is given an input of the number 0, it will play the main musical theme.
   // For an input of the number 1, it will play Act 1, for the number 2, Act 2, etc,
   // up to Act 5
+
+  const [currentTrackNumber, setCurrentTrackNumber] = useState();
+
   function selectTrack(trackNumber) {
     if (trackNumber === 0) {
       setCurrentTrack({
@@ -57,40 +60,45 @@ export default function MainPage(props) {
         filePath: './themeMusic.mp3'
       })
     }
-    else if (trackNumber === 1) {
+    else if (trackNumber === 1 && currentTrackNumber !== 1) {
       setCurrentTrack({
-        title: "Act 1: Seeds",
+        title: "ACT 1: SEEDS",
         duration: 701,
         filePath: './act1.mp3'
       })
+      setCurrentTrackNumber(1)
     }
-    else if (trackNumber === 2) {
+    else if (trackNumber === 2 && currentTrackNumber !== 2) {
       setCurrentTrack({
-        title: "Act 2: Sprouts",
+        title: "ACT 2: SPROUTS",
         duration: 636,
         filePath: `./act2.mp3`
       })
+      setCurrentTrackNumber(2)
     }
-    else if (trackNumber === 3) {
+    else if (trackNumber === 3 && currentTrackNumber !== 3) {
       setCurrentTrack({
-        title: "Act 3: Stems",
+        title: "ACT 3: STEMS",
         duration: 548,
         filePath: './act3.mp3'
       })
+      setCurrentTrackNumber(3)
     }
-    else if (trackNumber === 4) {
+    else if (trackNumber === 4 && currentTrackNumber !== 4) {
       setCurrentTrack({
-        title: "Act 4: Branches",
+        title: "ACT 4: BRANCHES",
         duration: 892,
         filePath: './act4.mp3'
       })
+      setCurrentTrackNumber(4)
     }
-    else if (trackNumber === 5) {
+    else if (trackNumber === 5 && currentTrackNumber !== 5) {
       setCurrentTrack({
-        title: "Act 5: Leaves",
+        title: "ACT 5: LEAVES",
         duration: 991,
         filePath: './act5.mp3'
       })
+      setCurrentTrackNumber(5)
     }
   }
 

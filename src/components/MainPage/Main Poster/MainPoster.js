@@ -82,6 +82,9 @@ export default function MainPoster(props) {
     () => {
       setTransparencyShift(props.transparencyShift)
       setOverlayTransparency(overlayTransparency + 0.01)
+      if (props.transparencyShift === "fadeDown") {
+        setCursorType("default")
+      }
     },
     [props.transparencyShift]
   )

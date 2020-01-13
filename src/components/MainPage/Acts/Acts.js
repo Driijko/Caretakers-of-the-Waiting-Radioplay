@@ -15,6 +15,9 @@ import Act from './Act'
 
 export default function Acts(props) {
 
+  // Current Track
+  const [currentTrackNumber, setCurrentTrackNumber] = useState();
+
   // Act Size
   const actSize = Math.floor( (props.windowSize.height / 9) + (props.windowSize.width / 15) )
 

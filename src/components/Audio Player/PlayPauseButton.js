@@ -20,7 +20,7 @@ export default function PlayPauseButton(props) {
 
   useEffect(
     () => {
-      setButtonImage(playButtonImage)
+      setButtonImage(pauseButtonImage)
     },
     [props.currentTrack]
   )

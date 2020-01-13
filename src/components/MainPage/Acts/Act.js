@@ -26,7 +26,8 @@ export default function Act(props) {
     height: `${size}px`,
     borderRadius: `${size}px`,
     border: `5px solid rgb(${borderColor}, 1)`,
-    backgroundColor: `rgb(${backgroundColor}, 0.5)`
+    backgroundColor: `rgb(${backgroundColor}, 0.5)`,
+    cursor: "pointer"
   }
 
   return (
