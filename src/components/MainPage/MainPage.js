@@ -118,10 +118,10 @@ export default function MainPage(props) {
   // RENDERING -------------------------------------------------------------------------------------
 
   // Audio Prompt Component
-  const [renderAudioPrompt, setRenderAudioPrompt] = useState(false)
+  const [renderAudioPrompt, setRenderAudioPrompt] = useState(true)
 
   // Acts Component
-  const [renderActs, setRenderActs] = useState(true)
+  const [renderActs, setRenderActs] = useState(false)
 
   // Any time a new mode is initiated for the main page, this effect is triggered, 
   // allowing us to control what is being rendered depending on the mode.
